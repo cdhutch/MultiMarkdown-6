@@ -172,10 +172,11 @@ if (hasParent)
 else()
 	# If building the framework independently, we canset a deployment target
 	# set (CMAKE_OSX_DEPLOYMENT_TARGET "10.12")
+endif()
 
-	if (CMAKE_GENERATOR MATCHES "Xcode")
-		set (CMAKE_OSX_ARCHITECTURES "$(ARCHS_STANDARD)")
-	endif()
+
+if (CMAKE_GENERATOR MATCHES "Xcode")
+	set (CMAKE_OSX_ARCHITECTURES "$(ARCHS_STANDARD)")
 endif()
 
 
