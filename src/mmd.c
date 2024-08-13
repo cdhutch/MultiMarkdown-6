@@ -2802,6 +2802,22 @@ void mmd_engine_update_metavalue_for_key(mmd_engine * e, const char * key, const
 }
 
 
+/// Convert MMD text to AST, with specified extensions, and language
+/// Returned token tree must be freed
+token * mmd_string_parse(const char * source, unsigned long extensions) {
+	mmd_engine * e = mmd_engine_create_with_string(source, extensions);
+
+	mmd_engine_parse_string(e);
+
+	token * result = mmd_engine_root(e);
+	e->root = NULL;
+
+	mmd_engine_free(e, true);
+
+	return result;
+}
+
+
 /// Convert MMD text to specified format, with specified extensions, and language
 /// Returned char * must be freed
 char * mmd_string_convert(const char * source, unsigned long extensions, short format, short language) {
