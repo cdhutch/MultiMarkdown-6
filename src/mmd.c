@@ -1857,14 +1857,15 @@ void is_list_loose(token * list) {
 
 				while (walker->next != NULL) {
 					if (walker->type == BLOCK_EMPTY) {
-                        // TODO: This switch statement is probably not all-inclusive
-                        switch (walker->next->type) {
-                            case BLOCK_PARA:
-                            case BLOCK_TABLE:
-                                loose = true;
-                            default:
-                                break;
-                        }
+						// TODO: This switch statement is probably not all-inclusive
+						switch (walker->next->type) {
+							case BLOCK_PARA:
+							case BLOCK_TABLE:
+								loose = true;
+
+							default:
+								break;
+						}
 					}
 
 					walker = walker->next;

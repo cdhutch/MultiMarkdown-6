@@ -461,6 +461,7 @@ typedef void * const voidpc;
 
 #ifdef __cplusplus
 }
+
 #endif
 #pragma once
 #include <assert.h>
@@ -499,6 +500,7 @@ typedef int mz_bool;
 typedef struct mz_dummy_time_t_tag {
 	int m_dummy;
 } mz_dummy_time_t;
+
 #define MZ_TIME_T mz_dummy_time_t
 #else
 #define MZ_TIME_T time_t
@@ -551,6 +553,7 @@ extern void * miniz_def_realloc_func(void * opaque, void * address, size_t items
 
 #ifdef __cplusplus
 }
+
 #endif
 #pragma once
 
@@ -733,6 +736,7 @@ void tdefl_compressor_free(tdefl_compressor * pComp);
 
 #ifdef __cplusplus
 }
+
 #endif
 #pragma once
 
@@ -872,6 +876,7 @@ struct tinfl_decompressor_tag {
 
 #ifdef __cplusplus
 }
+
 #endif
 
 #pragma once
@@ -1303,6 +1308,7 @@ void * mz_zip_extract_archive_file_to_heap_v2(const char * pZip_filename, const 
 
 #ifdef __cplusplus
 }
+
 #endif
 
 #endif /* MINIZ_NO_ARCHIVE_APIS */

@@ -472,6 +472,7 @@ static void add_assets(mz_zip_archive * pZip, mmd_engine * e, const char * direc
 		}
 	}
 }
+
 #endif
 
 

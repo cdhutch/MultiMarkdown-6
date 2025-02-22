@@ -288,6 +288,7 @@ void scratch_pad_free(scratch_pad * scratch) {
 		HASH_DEL(scratch->footnote_hash, f);	// Remove item from hash
 		free(f);		// Free the fn_holder
 	}
+
 	stack_free(scratch->used_footnotes);
 
 	while (scratch->inline_footnotes_to_free->size) {
@@ -302,6 +303,7 @@ void scratch_pad_free(scratch_pad * scratch) {
 		HASH_DEL(scratch->citation_hash, f);	// Remove item from hash
 		free(f);		// Free the fn_holder
 	}
+
 	stack_free(scratch->used_citations);
 
 	while (scratch->inline_citations_to_free->size) {
@@ -317,6 +319,7 @@ void scratch_pad_free(scratch_pad * scratch) {
 		HASH_DEL(scratch->glossary_hash, f);	// Remove item from hash
 		free(f);		// Free the fn_holder
 	}
+
 	stack_free(scratch->used_glossaries);
 
 	while (scratch->inline_glossaries_to_free->size) {
@@ -331,6 +334,7 @@ void scratch_pad_free(scratch_pad * scratch) {
 		HASH_DEL(scratch->abbreviation_hash, f);	// Remove item from hash
 		free(f);		// Free the fn_holder
 	}
+
 	stack_free(scratch->used_abbreviations);
 
 	while (scratch->inline_abbreviations_to_free->size) {
